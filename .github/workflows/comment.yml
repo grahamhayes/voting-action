@@ -1,0 +1,11 @@
+on: [issue_comment]
+
+jobs:
+  vote_job:
+    runs-on: ubuntu-latest
+    name: Vote on PR / Issue
+    steps:
+      - name: vote
+        uses: ./.github/actions/voting
+        with:
+          issue: ${{ github.event.issue.number }}
