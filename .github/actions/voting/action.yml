@@ -3,8 +3,14 @@ description: 'Greet someone and record the time'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
-    required: true
+    required: false
     default: 'World'
+  issue:
+    description: Issue issue number 
+    required: false
+    default: "0"
+    
+  
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -13,3 +19,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
+    - ${{ inputs.issue }}
