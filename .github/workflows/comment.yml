@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Vote on PR / Issue
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: vote
         uses: ./.github/actions/voting
         with:
